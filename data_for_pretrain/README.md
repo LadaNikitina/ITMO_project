@@ -185,7 +185,7 @@
 
 Запустите скрипт:
 ```
-python generate_dialog_pairs.py\
+python generate_dialog_pairs.py
 ```
 
 Пары диалогов будут сохранены в файл output.csv.
