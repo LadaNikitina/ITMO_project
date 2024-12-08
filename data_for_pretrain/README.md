@@ -58,7 +58,7 @@
 1. Поместите сырые данные датасетов в папку `dialog_datasets`.
 2. Запустите скрипт предобработки:
    ```bash
-   python preprocessing.py
+   python pretrain_preprocessing.py
    
 ## Аналитика датасетов - dataset_analytics.py
 
@@ -208,7 +208,7 @@
 
 Запустите скрипт:
 ```
-python generate_dialog_pairs.py
+python pretrain_collecting.py
 ```
 
 Пары диалогов будут сохранены в файл output.csv.
