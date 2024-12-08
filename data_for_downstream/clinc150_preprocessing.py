@@ -1,6 +1,5 @@
 import pandas as pd
 from datasets import load_dataset
-from utils import process_pandas_df
 
 def process_pandas_df(data, split_name):
     df = pd.DataFrame(data)
@@ -25,4 +24,4 @@ def process_clinc150():
     dataset_prefix = "CLINC150_"
     union_df["label"] = dataset_prefix + union_df["label"].astype(str)
     
-    return union_df
+    return union_df[["utterance", "label", "split", "language"]]

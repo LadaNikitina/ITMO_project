@@ -19,4 +19,4 @@ def process_banking77():
     dataset_prefix = "BANKING77_"
     union_df["label"] = dataset_prefix + union_df["label"].astype(str)
 
-    return union_df
+    return union_df[["utterance", "label", "split", "language"]]

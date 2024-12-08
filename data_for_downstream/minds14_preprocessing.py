@@ -15,10 +15,8 @@ def process_pandas_df(data, split_name):
 def process_minds14():
     minds14 = load_dataset("PolyAI/minds14", "all")
 
-    # Обработка данных
     df = process_pandas_df(minds14["train"], "train")
 
-    # Добавление префикса к меткам
     dataset_prefix = "MINDS14_"
     df["label"] = dataset_prefix + df["label"].astype(str)
 
