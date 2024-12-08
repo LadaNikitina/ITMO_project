@@ -1,0 +1,40 @@
+=== Dataset Analysis ===
+
+Number of dialogs: 1200
+Total utterances: 8816
+Average length of replicas (characters): 61.75
+Average number of turns per dialog: 7.35
+Average dialog length (characters): 453.67
+Most frequent words:
+the: 5288 occurrences
+you: 3554 occurrences
+and: 2236 occurrences
+restaurant: 2224 occurrences
+phone: 1774 occurrences
+number: 1734 occurrences
+food: 1680 occurrences
+for: 1600 occurrences
+there: 1567 occurrences
+town: 1447 occurrences
+address: 1363 occurrences
+thank: 1180 occurrences
+that: 1165 occurrences
+would: 1095 occurrences
+are: 1082 occurrences
+can: 1070 occurrences
+part: 1032 occurrences
+like: 1006 occurrences
+have: 896 occurrences
+01223: 873 occurrences
+restaurants: 853 occurrences
+what: 744 occurrences
+centre: 741 occurrences
+price: 734 occurrences
+looking: 704 occurrences
+else: 688 occurrences
+please: 686 occurrences
+range: 685 occurrences
+goodbye: 613 occurrences
+anything: 611 occurrences
+
+=== End of Analysis ===

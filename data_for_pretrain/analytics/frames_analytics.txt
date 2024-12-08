@@ -1,0 +1,40 @@
+=== Dataset Analysis ===
+
+Number of dialogs: 1369
+Total utterances: 19464
+Average length of replicas (characters): 65.64
+Average number of turns per dialog: 14.22
+Average dialog length (characters): 933.22
+Most frequent words:
+the: 7726 occurrences
+you: 7719 occurrences
+and: 5671 occurrences
+for: 4712 occurrences
+have: 3873 occurrences
+from: 3229 occurrences
+hotel: 3143 occurrences
+would: 2723 occurrences
+that: 2458 occurrences
+can: 2445 occurrences
+star: 2145 occurrences
+this: 1920 occurrences
+are: 1917 occurrences
+like: 1844 occurrences
+package: 1730 occurrences
+free: 1635 occurrences
+with: 1600 occurrences
+there: 1562 occurrences
+what: 1524 occurrences
+september: 1488 occurrences
+book: 1387 occurrences
+your: 1324 occurrences
+will: 1287 occurrences
+day: 1235 occurrences
+how: 1215 occurrences
+wifi: 1208 occurrences
+trip: 1207 occurrences
+business: 1193 occurrences
+august: 1189 occurrences
+days: 1152 occurrences
+
+=== End of Analysis ===

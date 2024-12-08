@@ -1,0 +1,40 @@
+=== Dataset Analysis ===
+
+Number of dialogs: 22825
+Total utterances: 439197
+Average length of replicas (characters): 52.07
+Average number of turns per dialog: 19.24
+Average dialog length (characters): 1001.99
+Most frequent words:
+you: 160038 occurrences
+the: 150754 occurrences
+for: 91337 occurrences
+that: 82794 occurrences
+and: 62351 occurrences
+what: 47826 occurrences
+like: 46710 occurrences
+there: 46495 occurrences
+march: 45545 occurrences
+want: 41981 occurrences
+can: 40131 occurrences
+would: 36507 occurrences
+please: 33645 occurrences
+your: 33276 occurrences
+will: 32971 occurrences
+need: 28994 occurrences
+yes: 28725 occurrences
+are: 28656 occurrences
+from: 28239 occurrences
+with: 27830 occurrences
+have: 23558 occurrences
+this: 22766 occurrences
+find: 22726 occurrences
+tickets: 21140 occurrences
+help: 20651 occurrences
+how: 20381 occurrences
+thanks: 19844 occurrences
+else: 18685 occurrences
+good: 17786 occurrences
+confirm: 17565 occurrences
+
+=== End of Analysis ===

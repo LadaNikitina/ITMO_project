@@ -1,8 +1,8 @@
 import json
 import os
 
-from .data_example import get_input_example
-
+from data_example import get_input_example
+from dataset_analytics import dataset_analysis
 
 def parse_turns(config, file_path, max_entries=None, dataset_name=""):
     print(f"Reading from {file_path} for turn-level parsing...")
@@ -33,7 +33,7 @@ def parse_turns(config, file_path, max_entries=None, dataset_name=""):
             entry_counter += 1
 
         if sender.lower() == "user":
-            user_input = message.lower().strip()
+            user_input = message.strip()
 
             sample_data = get_input_example("turn")
             sample_data.update({
@@ -51,7 +51,7 @@ def parse_turns(config, file_path, max_entries=None, dataset_name=""):
             turn_index += 1
 
         elif sender.lower() == "agent":
-            system_response = message.lower().strip()
+            system_response = message.strip()
 
         if max_entries and entry_counter >= max_entries:
             break
@@ -78,5 +78,7 @@ def prepare_msre2e_data(config):
     print(f"Training samples from {dataset_identifier}: {len(train_data)}")
     print(f"Validation samples from {dataset_identifier}: {len(dev_data)}")
     print(f"Test samples from {dataset_identifier}: {len(test_data)}")
+    
+    dataset_analysis(train_data, "analytics/msre2e_analytics.txt")
 
     return train_data, dev_data, test_data

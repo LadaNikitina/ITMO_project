@@ -1,8 +1,8 @@
 import json
 import os
 
-from .data_example import get_input_example
-
+from data_example import get_input_example
+from dataset_analytics import dataset_analysis
 
 def parse_turns(config, path_to_file, max_entries=None, dataset_name=""):
     print(f"Loading data from {path_to_file} for turn-level parsing...")
@@ -21,7 +21,7 @@ def parse_turns(config, path_to_file, max_entries=None, dataset_name=""):
 
             for turn_index, turn in enumerate(conversation.get("turns", [])):
                 author = turn.get("author")
-                content = turn.get("text", "").lower().strip()
+                content = turn.get("text", "").strip()
 
                 if author == "user":
                     user_input = content
@@ -58,12 +58,14 @@ def prepare_frames_data(config):
 
     data_file = os.path.join(config.get("data_path", ""), "frames.json")
 
-    training_data = parse_turns(config, data_file, max_entries, dataset_identifier)
-    validation_data = []
+    train_data = parse_turns(config, data_file, max_entries, dataset_identifier)
+    dev_data = []
     test_data = []
 
-    print(f"Training samples from {dataset_identifier}: {len(training_data)}")
-    print(f"Validation samples from {dataset_identifier}: {len(validation_data)}")
+    print(f"Training samples from {dataset_identifier}: {len(train_data)}")
+    print(f"Validation samples from {dataset_identifier}: {len(dev_data)}")
     print(f"Test samples from {dataset_identifier}: {len(test_data)}")
+    
+    dataset_analysis(train_data, "analytics/frames_analytics.txt")
 
-    return training_data, validation_data, test_data
+    return train_data, dev_data, test_data

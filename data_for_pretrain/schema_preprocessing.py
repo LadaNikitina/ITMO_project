@@ -1,8 +1,8 @@
 import json
 import os
 
-from .data_example import get_input_example
-
+from data_example import get_input_example
+from dataset_analytics import dataset_analysis
 
 def parse_turns(config, dialog_files, max_entries=None, dataset_name=""):
     print(f"Reading from {dataset_name} for turn-level parsing...")
@@ -20,7 +20,7 @@ def parse_turns(config, dialog_files, max_entries=None, dataset_name=""):
 
             for turn_index, turn in enumerate(dialog.get("turns", [])):
                 if turn.get("speaker") == "USER":
-                    user_input = turn.get("utterance", "").lower().strip()
+                    user_input = turn.get("utterance", "").strip()
 
                     sample_data = get_input_example("turn")
                     sample_data.update({
@@ -37,7 +37,7 @@ def parse_turns(config, dialog_files, max_entries=None, dataset_name=""):
                     dialog_history.extend([system_response, user_input])
 
                 elif turn.get("speaker") == "SYSTEM":
-                    system_response = turn.get("utterance", "").lower().strip()
+                    system_response = turn.get("utterance", "").strip()
 
             if config.get("only_last_turn", False):
                 dialog_samples.append(sample_data)
@@ -75,5 +75,7 @@ def prepare_schema_data(config):
     print(f"Training samples from {dataset_identifier}: {len(train_data)}")
     print(f"Validation samples from {dataset_identifier}: {len(dev_data)}")
     print(f"Test samples from {dataset_identifier}: {len(test_data)}")
+    
+    dataset_analysis(train_data + dev_data + test_data, "analytics/schema_analytics.txt")
 
     return train_data, dev_data, test_data

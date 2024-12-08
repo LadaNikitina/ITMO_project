@@ -1,15 +1,13 @@
 import json
 import os
 
-from .data_example import get_input_example
+from data_example import get_input_example
+from dataset_analytics import dataset_analysis
 
-EXPERIMENT_DOMAINS = ["hotel", "train", "restaurant", "attraction", "taxi"]
-
-def parse_turns(config, file_path, dialog_act, max_entries=None):
+def parse_turns(config, file_path, max_entries=None):
     print(f"Reading from {file_path} for turn-level parsing...")
 
     dialog_samples = []
-    response_candidates = set()
 
     with open(file_path, "r") as file:
         dialogs = json.load(file)
@@ -18,8 +16,6 @@ def parse_turns(config, file_path, dialog_act, max_entries=None):
 
     for dialog in dialogs:
         dialog_history = []
-
-        domains = [domain for domain in dialog["domains"] if domain in EXPERIMENT_DOMAINS]
 
         for turn_index, turn in enumerate(dialog["dialogue"]):
             system_response = turn.get("system_transcript", "").strip()
@@ -38,10 +34,9 @@ def parse_turns(config, file_path, dialog_act, max_entries=None):
                 dialog_samples.append(sample_data)
 
             dialog_history.extend([system_response, user_input])
-            response_candidates.add(sample_data)
 
         if config.get("only_last_turn", False):
-            dialog_samples.append(data_detail)
+            dialog_samples.append(sample_data)
 
         entry_counter += 1
         if max_entries and entry_counter > max_entries:
@@ -58,19 +53,16 @@ def prepare_multiwoz_data(config):
     file_dev = os.path.join(data_path, f"MultiWOZ-{version}/dev_dials.json")
     file_test = os.path.join(data_path, f"MultiWOZ-{version}/test_dials.json")
 
-    dialog_act_file = os.path.join(data_path, f"MultiWOZ-{version}/dialogue_acts.json")
-    dialog_act = json.load(open(dialog_act_file, "r"))
-
     max_entries = config.get("max_line", None)
-    parse_type = "dialogs" if "dial" in config.get("example_type", "") else "turns"
 
-    parse_function = globals()[f"parse_{parse_type}_multiwoz"]
-    train_data = parse_function(config, file_train, dialog_act, max_entries)
-    dev_data = parse_function(config, file_dev, dialog_act, max_entries)
-    test_data= parse_function(config, file_test, dialog_act, max_entries)
+    train_data = parse_turns(config, file_train, max_entries)
+    dev_data = parse_turns(config, file_dev, max_entries)
+    test_data = parse_turns(config, file_test, max_entries)
 
     print(f"Training samples: {len(train_data)}")
     print(f"Validation samples: {len(dev_data)}")
     print(f"Test samples: {len(test_data)}")
+    
+    dataset_analysis(train_data + dev_data + test_data, "analytics/multiwoz_analytics.txt")
 
     return train_data, dev_data, test_data

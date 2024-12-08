@@ -1,7 +1,8 @@
 import json
 import os
 
-from .data_example import get_input_example
+from data_example import get_input_example
+from dataset_analytics import dataset_analysis
 
 def parse_turns_camrest676(config, file_path, max_entries=None):
     print(f"Reading from {file_path} for turn-level parsing...")
@@ -17,8 +18,8 @@ def parse_turns_camrest676(config, file_path, max_entries=None):
         dialog_history = [""]
 
         for turn in dialog.get("dial", []):
-            user_input = turn["usr"]["transcript"].lower().strip()
-            system_response = turn["sys"]["sent"].lower().strip()
+            user_input = turn["usr"]["transcript"].strip()
+            system_response = turn["sys"]["sent"].strip()
 
             sample_data = get_input_example("turn")
             sample_data.update({
@@ -55,5 +56,7 @@ def prepare_camrest676_data(config):
     test_data = []
 
     print(f"Training samples from {dataset_identifier}: {len(train_data)}")
+    
+    dataset_analysis(train_data, "analytics/camrest676_analytics.txt")
 
     return train_data, dev_data, test_data
