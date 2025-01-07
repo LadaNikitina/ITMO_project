@@ -6,10 +6,6 @@ Average length of replicas (characters): 44.97
 Average number of turns per dialog: 4.38
 Average dialog length (characters): 197.07
 Most frequent words:
-the: 6241 occurrences
-you: 3411 occurrences
-for: 2088 occurrences
-and: 1934 occurrences
 there: 1728 occurrences
 what: 1702 occurrences
 thank: 1597 occurrences
@@ -26,15 +22,19 @@ address: 735 occurrences
 this: 720 occurrences
 week: 717 occurrences
 weather: 713 occurrences
-set: 703 occurrences
 like: 665 occurrences
-car: 665 occurrences
 city: 643 occurrences
 today: 614 occurrences
 next: 602 occurrences
 appointment: 590 occurrences
-one: 546 occurrences
-are: 541 occurrences
 that: 539 occurrences
+forecast: 525 occurrences
+would: 511 occurrences
+have: 493 occurrences
+directions: 457 occurrences
+reminder: 422 occurrences
+time: 413 occurrences
+nearest: 393 occurrences
+okay: 386 occurrences
 
 === End of Analysis ===

@@ -6,25 +6,17 @@ Average length of replicas (characters): 38.62
 Average number of turns per dialog: 9.56
 Average dialog length (characters): 369.01
 Most frequent words:
-you: 111956 occurrences
-the: 91276 occurrences
 that: 52552 occurrences
-can: 47499 occurrences
-for: 44538 occurrences
 what: 40860 occurrences
 help: 33560 occurrences
 with: 27066 occurrences
 have: 26476 occurrences
 like: 23591 occurrences
-and: 23128 occurrences
 would: 22590 occurrences
 need: 22331 occurrences
-yes: 21526 occurrences
-are: 21043 occurrences
 your: 21019 occurrences
 thanks: 19476 occurrences
 okay: 19062 occurrences
-how: 18607 occurrences
 about: 16932 occurrences
 there: 15707 occurrences
 sure: 15652 occurrences
@@ -32,9 +24,17 @@ want: 14686 occurrences
 will: 13858 occurrences
 please: 12610 occurrences
 know: 12533 occurrences
-all: 12394 occurrences
 thank: 11569 occurrences
 this: 11417 occurrences
-not: 10800 occurrences
+time: 10756 occurrences
+anything: 10659 occurrences
+else: 10420 occurrences
+some: 9291 occurrences
+great: 8533 occurrences
+from: 8070 occurrences
+number: 7639 occurrences
+meeting: 7421 occurrences
+which: 7131 occurrences
+they: 6149 occurrences
 
 === End of Analysis ===

@@ -4,9 +4,12 @@ from massive_preprocessing import process_massive
 from minds14_preprocessing import process_minds14
 from snips_preprocessing import process_snips
 
+import os
 import pandas as pd
 
 def main():
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+
     dataset_names = ["banking77", "clinc150", "massive", "minds14", "snips"]
 
     datasets = []
@@ -20,7 +23,7 @@ def main():
         
     all_datasets = pd.concat(datasets, axis = 0)
        
-    all_datasets.to_csv("downstream_data.csv")
+    all_datasets.to_csv(os.path.join(current_dir, "downstream_data.csv"))
 
 if __name__ == "__main__":
     main()

@@ -63,6 +63,7 @@ def prepare_multiwoz_data(config):
     print(f"Validation samples: {len(dev_data)}")
     print(f"Test samples: {len(test_data)}")
     
-    dataset_analysis(train_data + dev_data + test_data, "analytics/multiwoz_analytics.txt")
+    analytics_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "analytics/multiwoz_analytics.txt")
+    dataset_analysis(train_data + dev_data + test_data, analytics_path)
 
     return train_data, dev_data, test_data

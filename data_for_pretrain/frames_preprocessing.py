@@ -66,6 +66,7 @@ def prepare_frames_data(config):
     print(f"Validation samples from {dataset_identifier}: {len(dev_data)}")
     print(f"Test samples from {dataset_identifier}: {len(test_data)}")
     
-    dataset_analysis(train_data, "analytics/frames_analytics.txt")
+    analytics_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "analytics/frames_analytics.txt")
+    dataset_analysis(train_data, analytics_path)
 
     return train_data, dev_data, test_data

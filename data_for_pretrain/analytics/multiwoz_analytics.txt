@@ -6,19 +6,13 @@ Average length of replicas (characters): 73.55
 Average number of turns per dialog: 12.71
 Average dialog length (characters): 934.68
 Most frequent words:
-you: 74449 occurrences
-the: 73618 occurrences
-for: 42167 occurrences
-and: 34024 occurrences
 that: 30590 occurrences
 would: 28238 occurrences
 like: 22818 occurrences
-can: 22726 occurrences
 there: 20125 occurrences
 have: 20020 occurrences
 need: 19629 occurrences
 number: 19333 occurrences
-are: 17028 occurrences
 your: 14268 occurrences
 book: 13650 occurrences
 please: 13394 occurrences
@@ -27,7 +21,6 @@ with: 12690 occurrences
 restaurant: 12623 occurrences
 what: 11780 occurrences
 will: 11376 occurrences
-yes: 11125 occurrences
 hotel: 10318 occurrences
 cambridge: 10251 occurrences
 else: 10153 occurrences
@@ -36,5 +29,12 @@ thank: 9783 occurrences
 reference: 9414 occurrences
 train: 9409 occurrences
 looking: 9403 occurrences
+centre: 8105 occurrences
+price: 7982 occurrences
+from: 7916 occurrences
+town: 7857 occurrences
+time: 7586 occurrences
+phone: 7418 occurrences
+free: 7178 occurrences
 
 === End of Analysis ===

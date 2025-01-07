@@ -6,23 +6,16 @@ Average length of replicas (characters): 59.03
 Average number of turns per dialog: 6.62
 Average dialog length (characters): 390.61
 Most frequent words:
-you: 27590 occurrences
-the: 20708 occurrences
-for: 16152 occurrences
 like: 14195 occurrences
 would: 14101 occurrences
-and: 11425 occurrences
 what: 8920 occurrences
 please: 8306 occurrences
 your: 6995 occurrences
-are: 6756 occurrences
 that: 6314 occurrences
 book: 5556 occurrences
-can: 5239 occurrences
 tickets: 4926 occurrences
 time: 4910 occurrences
 have: 4596 occurrences
-how: 4394 occurrences
 need: 4384 occurrences
 great: 3984 occurrences
 uberx: 3832 occurrences
@@ -36,5 +29,12 @@ date: 3321 occurrences
 available: 3138 occurrences
 with: 3116 occurrences
 thank: 3098 occurrences
+will: 2644 occurrences
+location: 2641 occurrences
+seattle: 2623 occurrences
+this: 2556 occurrences
+uberxl: 2544 occurrences
+options: 2486 occurrences
+reservation: 2412 occurrences
 
 === End of Analysis ===

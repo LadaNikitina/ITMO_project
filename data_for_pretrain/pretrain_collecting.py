@@ -8,10 +8,13 @@ from taskmaster_preprocessing import *
 from metalwoz_preprocessing import *
 from schema_preprocessing import *
 
+import os
 import pickle
 
 def main():
-    data_path = 'dialog_datasets'
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    data_path = os.path.join(current_dir, "dialog_datasets")
+    
     dataset_names = ["multiwoz", "camrest676", "woz", "smd", "frames", "msre2e", "taskmaster", "metalwoz", "schema"]
     holdout_dataset_names = ["multiwoz"]
 
@@ -38,7 +41,7 @@ def main():
                 "test" : []
             }
 
-    with open("pre_train.pkl", "wb") as f:
+    with open(os.path.join(current_dir, "pre_train.pkl"), "wb") as f:
         pickle.dump(datasets, f)
 
 if __name__ == "__main__":

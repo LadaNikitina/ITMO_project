@@ -4,9 +4,11 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 
 def process_snips():
-    with open("SNIPS/snips_train.json", "r") as f:
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+
+    with open(os.path.join(current_dir, "SNIPS/snips_train.json"), "r") as f:
         snips_train = json.load(f)
-    with open("SNIPS/snips_test.json", "r") as f:
+    with open(os.path.join(current_dir, "SNIPS/snips_test.json"), "r") as f:
         snips_test = json.load(f)
 
     snips_data = snips_train + snips_test
