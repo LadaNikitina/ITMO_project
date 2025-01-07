@@ -24,7 +24,7 @@
    
 2. Предобработка данных
 
-```Реализовано в скриптах "data_for_pretrain/название датасета_preprocessing.py", "data_for_downstream/название датасета_preprocessing.py", "data_for_pretrain/pretrain_collecting.py", "data_for_pretrain/pretrain_preprocessing.py" и "data_for_downstream/downstream_collecting.py".```
+   ```Реализовано в скриптах "data_for_pretrain/название датасета_preprocessing.py", "data_for_downstream/название датасета_preprocessing.py", "data_for_pretrain/pretrain_collecting.py", "data_for_pretrain/pretrain_preprocessing.py" и "data_for_downstream/downstream_collecting.py".```
    
 3. Исследовательский анализ данных
 
