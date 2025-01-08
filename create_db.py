@@ -2,6 +2,11 @@ import sqlite3
 import pickle
 import csv
 
+# Удалим существующую базу данных, если она есть
+if os.path.exists(db_name):
+    os.remove(db_name)
+    print(f'Существующая база данных "{db_name}" удалена.')
+
 # Создадим базу данных SQLite и подключение к ней
 conn = sqlite3.connect('dialogs.db')  # Имя базы данных
 cursor = conn.cursor()
@@ -55,7 +60,7 @@ for record in data:
 # Загрузим данные из CSV файла для таблицы pairs
 with open('data_for_pretrain/output.csv', 'r', newline = '', encoding = 'utf-8') as csv_file:
     csv_reader = csv.reader(csv_file)
-    next(csv_reader)  # Пропустить заголовок
+    next(csv_reader)
     for row in csv_reader:
         cursor.execute('''
         INSERT INTO pairs (first_utterance, second_utterance)
@@ -65,12 +70,12 @@ with open('data_for_pretrain/output.csv', 'r', newline = '', encoding = 'utf-8')
 # Загрузим данные из CSV файла для таблицы downstream
 with open('data_for_downstream/downstream_data.csv', 'r', newline = '', encoding = 'utf-8') as csv_file:
     csv_reader = csv.reader(csv_file)
-    next(csv_reader)  # Пропустить заголовок
+    next(csv_reader)
     for row in csv_reader:
         cursor.execute('''
         INSERT INTO downstream (utterance, label, split, language, dataset_name)
         VALUES (?, ?, ?, ?, ?)
-        ''', (row[0], row[1], row[2], row[3], row[4]))
+        ''', (row[1], row[2], row[3], row[4], row[5]))
 
 conn.commit()
 conn.close()
