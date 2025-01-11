@@ -44,7 +44,7 @@
    
 7. Оформление дашборда
 
-```Реализовано в рамках скрипта run_dashboard.py, запускающего расчет дашборда при помощи streamlit. Демо (запись) дашборда представлено по [ссылке](https://drive.google.com/file/d/1lIcieReKksGiEPCOzh9ErQCFNrK0zU1d/view?usp=sharing). Запуск дашборда осуществляется при помощи команды streamlit run run_dashboard.py.```
+```Реализовано в рамках скрипта run_dashboard.py, запускающего расчет дашборда при помощи streamlit. Демо (запись) дашборда представлено по (ссылке)[https://drive.google.com/file/d/1lIcieReKksGiEPCOzh9ErQCFNrK0zU1d/view?usp=sharing]. Запуск дашборда осуществляется при помощи команды streamlit run run_dashboard.py.```
 
 8. Создание презентации и пояснительной записки о работе
 
